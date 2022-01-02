@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2021 at 12:46 PM
+-- Generation Time: Jan 02, 2022 at 07:43 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `nsu shuttle`
+-- Database: `nsu_shuttle`
 --
 
 -- --------------------------------------------------------
@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
+DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `Admin_ID` int(11) NOT NULL,
   `Name` varchar(30) NOT NULL,
@@ -39,7 +40,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`Admin_ID`, `Name`, `Phone`, `Password`) VALUES
-(1931796642, 'Md Shadman Zarif', '01933221144', '123456');
+(1931796642, 'Md Shadman Zarif', '01933221144', '123456'),
+(2011103642, 'S M Samiul Haq', '88023232435', '888333');
 
 -- --------------------------------------------------------
 
@@ -47,13 +49,14 @@ INSERT INTO `admin` (`Admin_ID`, `Name`, `Phone`, `Password`) VALUES
 -- Table structure for table `bookings`
 --
 
+DROP TABLE IF EXISTS `bookings`;
 CREATE TABLE `bookings` (
   `Booking_ID` int(11) NOT NULL,
   `User_ID` int(11) NOT NULL,
   `Route_ID` int(11) NOT NULL,
   `Bus_ID` int(11) DEFAULT NULL,
   `Way` varchar(10) NOT NULL,
-  `Time_Slot` varchar(5) NOT NULL,
+  `Time_Slot` varchar(7) NOT NULL,
   `Date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -63,6 +66,7 @@ CREATE TABLE `bookings` (
 -- Table structure for table `bus`
 --
 
+DROP TABLE IF EXISTS `bus`;
 CREATE TABLE `bus` (
   `Bus_ID` int(11) NOT NULL,
   `Name` varchar(30) NOT NULL,
@@ -87,6 +91,7 @@ INSERT INTO `bus` (`Bus_ID`, `Name`, `Registration_No`, `Driver_ID`) VALUES
 -- Table structure for table `driver`
 --
 
+DROP TABLE IF EXISTS `driver`;
 CREATE TABLE `driver` (
   `Driver_ID` int(11) NOT NULL,
   `Name` varchar(30) NOT NULL,
@@ -111,6 +116,7 @@ INSERT INTO `driver` (`Driver_ID`, `Name`, `Phone`, `Bus_ID`) VALUES
 -- Table structure for table `routes`
 --
 
+DROP TABLE IF EXISTS `routes`;
 CREATE TABLE `routes` (
   `Route_ID` int(11) NOT NULL,
   `Name` varchar(20) NOT NULL
@@ -133,6 +139,7 @@ INSERT INTO `routes` (`Route_ID`, `Name`) VALUES
 -- Table structure for table `stoppages`
 --
 
+DROP TABLE IF EXISTS `stoppages`;
 CREATE TABLE `stoppages` (
   `Route_ID` int(11) NOT NULL,
   `Name` varchar(20) NOT NULL
@@ -148,19 +155,10 @@ INSERT INTO `stoppages` (`Route_ID`, `Name`) VALUES
 (1100, 'Jashimuddin Avenue'),
 (1100, 'Uttara Airport'),
 (1100, 'Le Meridien'),
-(1100, 'Kuril'),
-(1200, 'Dhanmondi 2'),
-(1200, 'Dhanmondi 15'),
 (1200, 'Dhanmondi 27'),
 (1200, 'National Assembly'),
 (1200, 'Bijoy Sharani'),
-(1200, 'Mohakhali'),
-(1200, 'Mohakhali'),
 (1200, 'Banani'),
-(1200, 'Kurmiola'),
-(1200, 'Kuril'),
-(1200, 'Dhanmondi 2'),
-(1200, 'Dhanmondi 15'),
 (1300, 'Jatrabari'),
 (1300, 'Sayedabad'),
 (1300, 'Kamalapur'),
@@ -169,8 +167,6 @@ INSERT INTO `stoppages` (`Route_ID`, `Name`) VALUES
 (1300, 'Rampura'),
 (1300, 'Badda'),
 (1300, 'Baridhara'),
-(1200, 'Dhanmondi 2'),
-(1200, 'Dhanmondi 15'),
 (1400, 'Gabtoli'),
 (1400, 'Mazar Road'),
 (1400, 'Mirpur College'),
@@ -182,7 +178,12 @@ INSERT INTO `stoppages` (`Route_ID`, `Name`) VALUES
 (1500, 'Hatirjheel'),
 (1500, 'Gulshan 1'),
 (1500, 'Gulshan 2'),
-(1500, ' American Embassy');
+(1500, ' American Embassy'),
+(1200, 'Dhanmondi 15'),
+(1200, 'Dhanmondi 2'),
+(1200, 'Kuril'),
+(1200, 'Kurmitola'),
+(1200, 'Mohakhali');
 
 -- --------------------------------------------------------
 
@@ -190,6 +191,7 @@ INSERT INTO `stoppages` (`Route_ID`, `Name`) VALUES
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `User_ID` int(11) NOT NULL,
   `Name` varchar(30) NOT NULL,
@@ -203,7 +205,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`User_ID`, `Name`, `Phone`, `Address`, `Password`) VALUES
-(1931796642, 'Md Shadman Zarif', '01933221144', 'Dhanmondi', '12345678');
+(1835403642, 'Paul', '01722457581', 'Uttara', '11111'),
+(1915651042, 'Elise', '01342457584', 'Mirpur', '22222'),
+(1931796642, 'Md Shadman Zarif', '01933221144', 'Dhanmondi', '12345678'),
+(2011103642, 'Samiul Haq', '8802323243', 'Gulshan', '8888'),
+(2122230657, 'Ryan', '01832685752', 'Jatrabari', '33333');
 
 --
 -- Indexes for dumped tables
@@ -220,9 +226,9 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `bookings`
   ADD PRIMARY KEY (`Booking_ID`),
+  ADD KEY `User_ID` (`User_ID`),
   ADD KEY `Route_ID` (`Route_ID`),
-  ADD KEY `Bus_ID` (`Bus_ID`),
-  ADD KEY `User_ID` (`User_ID`);
+  ADD KEY `Bus_ID` (`Bus_ID`);
 
 --
 -- Indexes for table `bus`
@@ -257,6 +263,16 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`User_ID`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `bookings`
+--
+ALTER TABLE `bookings`
+  MODIFY `Booking_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10001;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -264,9 +280,9 @@ ALTER TABLE `user`
 -- Constraints for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`Route_ID`) REFERENCES `routes` (`Route_ID`),
-  ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`Bus_ID`) REFERENCES `bus` (`Bus_ID`),
-  ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`User_ID`) REFERENCES `user` (`User_ID`);
+  ADD CONSTRAINT `bookings_ibfk_1` FOREIGN KEY (`User_ID`) REFERENCES `user` (`User_ID`),
+  ADD CONSTRAINT `bookings_ibfk_2` FOREIGN KEY (`Route_ID`) REFERENCES `routes` (`Route_ID`),
+  ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`Bus_ID`) REFERENCES `bus` (`Bus_ID`);
 
 --
 -- Constraints for table `bus`
