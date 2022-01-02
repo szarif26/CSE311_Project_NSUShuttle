@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Page</title>
+	 <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	<link rel="stylesheet" href="CSS/proj_style.css">
+	<link rel="icon" href="images/icon material.jpg">
+</head>
+
+<body>
+	 <!--Navigation bar-->
+    <section class="navigation-bar">
+        <div class="container">
+            <div class="logo">
+                <img src="images/NSU Shuttle Logo.png" alt="logo" class="img-responsive">
+            </div>
+            <div class="nav_menu_block">
+            <div class="menu text-right">
+                <ul>
+                    <li>
+                        <a href="file:///C:\xampp\htdocs\NSU_Shuttle/Homepage.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="file:///C:\xampp\htdocs\NSU_Shuttle/adminlogin.html">Admin Login</a>
+                    </li>
+                    <li>
+                        <a href="file:///C:\xampp\htdocs\NSU_Shuttle/contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="file:///C:\xampp\htdocs\NSU_Shuttle/about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="file:///C:\xampp\htdocs\NSU_Shuttle/faq.html">FAQ</a>
+                    </li>
+                    <li>
+                    	<button type="button"> <a href="file:///C:\xampp\htdocs\NSU_Shuttle/Homepage.html">Log Out</a>
+                    	</button></li>
+                </ul>
+            </div>
+        </div>
+            <div class="clearfix">
+
+            </div>
+        </div> 
+    </section>
+    <hr>
+    <!--Navigation bar ends-->
+
+<div class="page">
+	<div class="block">
+	<h1><strong>Welcome User!</strong></h1>
+	</div>
+	
+	<div class="category">
+		<h3>DASHBOARD</h3>    	
+
+    	
+    </div>
+    <div class="clearfix"></div>
+    <br>
+    <div class="form">
+    <p><h3>If you want to book a travel, please fill in the form below: </h3>
+    	<br>
+	<form action="calculate.php" method="POST">
+		<div>
+			<label>User ID</label>
+			<input type="number" name="ID" placeholder="Enter your ID">
+		</div>
+		<br>
+
+		<div>
+			<label>Time Slot</label>
+			<select name="time_slot">
+			<option value="" disabled selected hidden>Select a Slot</option>
+			<option value="8:00AM-9:30AM">8:00AM-9:30AM</option>
+			<option value="9:40AM-11:10AM">9:40AM-11:10AM</option>
+			<option value="11:20AM-12:50PM">11:20AM-12:50PM</option>
+			<option value="12:50PM-2:30PM">12:50PM-2:30PM</option>
+			<option value="2:40PM-4:10PM">2:40PM-4:10PM</option>
+			<option value="4:10PM-5:50PM">4:10PM-5:50PM</option>
+			</select>
+
+		</div>
+		<br>
+		<div>
+			<label>Way</label>
+			<select name="Way">
+			<option value="" disabled selected hidden>Select an option</option>
+			<option value="Arrival">Arrival</option>
+			<option value="Departure">Departure</option>
+			</select>
+
+		</div>
+		<br>
+		<div>
+			<label>Date</label>
+			<input type="date" name="Date">	
+		</div>
+		<br>
+		<div>
+			<label>Stoppages</label>
+			<select name="Stoppages">
+			<option value="" disabled selected hidden>Select a Pick-up Point</option>
+			<option value="Abdullahpur">Abdullahpur</option>
+			<option value="Dhanmondi">Dhanmondi</option>
+			<option value="House-Building">House Building</option>
+			<option value="Jashimuddin-Avenue">Jashimuddin Avenue</option>
+			<option value="Le Meridien">Uttara Airport</option>
+			<option value="Kuril">Kuril</option>
+			<option value="Dhanmondi 2">Dhanmondi 2</option>
+			<option value="Dhanmondi 15">Dhanmondi 15</option>
+			<option value="Dhanmondi 27">Dhanmondi 27</option>
+			<option value="National Assembly">National Assembly</option>
+			<option value="Bijoy Sharani">Bijoy Sharani</option>
+			<option value="Banani">Banani</option>
+			<option value="Kurmitola">Kurmitola</option>
+			<option value="Mohakhali">Mohakhali</option>
+			<option value="Jatrabari">Jatrabari</option>
+			<option value="Sayedabad">Sayedabad</option>
+			<option value="Kamalapur">Kamalapur</option>
+			<option value="Bashabo">Bashabo</option>
+			<option value="Moghbazar">Moghbazar</option>
+			<option value="Rampura">Rampura</option>
+			<option value="Badda">Badda</option>
+			<option value="Baridhara">Baridhara</option>
+			<option value="Gabtoli">Gabtoli</option>
+			<option value="Mazar Road">Mazar Road</option>
+			<option value="Mirpur College">Mirpur College</option>
+			<option value="Mirpur Stadium">Mirpur Stadium</option>
+			<option value="Mirpur 11">Mirpur 11</option>
+			<option value="Matikata">Matikata</option>
+			<option value="Cantonment">Cantonment</option>
+			<option value="Army Golf Club">Army Golf Club</option>
+			<option value="Hatirjheel">Hatirjheel</option>
+			<option value="Gulshan 1">Gulshan 1</option>
+			<option value="Gulshan 2">Gulshan 2</option>
+			<option value="American Embassy">American Embassy</option>
+			</select>
+		</div>
+		<br>
+		<div class="buttons">
+		<button type="button"> <a href="file:///C:/xampp/htdocs/NSU_Shuttle/.html">Confirm Booking</a>
+		<br>
+		<aside><button type="reset">Reset</button></aside>
+		</div>
+		</div>
+		<br>
+		
+
+		
+	</form>
+	</p>
+    </div>
+	</p>
+	</div>
+	<hr>
+
+	<div class="clearfix"></div>
+
+	<!--Footer starts-->
+	<div class="footer">
+    <section class="Footer"> 
+        <div class="container text-center">
+            <p>All rights reserved. Designed By <a href="#">S Tech Company</a> Maintained By <a href="http://www.northsouth.edu/resources/it-resource-center.html">NSU IT</a></p>
+        </div> 
+    </section>
+	</div>
+    <!--Footer ends-->
+</div>
+
+</body>
+</html>
+
