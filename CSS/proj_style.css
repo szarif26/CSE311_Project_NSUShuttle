@@ -97,13 +97,11 @@ button{
 	text-align: centre;
 	width: 200px;
 	margin: 0 auto;
-	display: inline;
 	float: none;
 }
 
-
-.form a{
-	color:#2f4f4f;
+.butons{
+   display:inline-block;
 }
 
 h3{
@@ -115,7 +113,7 @@ h3{
     border: 5px;
     border-right: 20px;
 }
-/*CSS For Form Ends*/
+/*CSS For Booking Form Ends*/
 
 /*CSS For Category STARTS*/
 .category{
