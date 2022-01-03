@@ -7,14 +7,14 @@ if(!$db)
     die("Connection error: " .mysqli_connect_error());
 }
 
-    $id = $_POST['Bus_ID'];
+    $id = $_POST['driver_ID'];
  
-    $sql1 = "UPDATE driver SET Bus_ID = NULL WHERE Bus_ID = '$id'";
-    $sql2= "DELETE FROM bus WHERE bus_ID ='$id'";  
+    $sql1 = "UPDATE bus SET Driver_ID = NULL WHERE Driver_ID = '$id'";
+    $sql2= "DELETE FROM driver WHERE driver_ID ='$id'";  
  
 if(mysqli_query($db,$sql1) && mysqli_query($db,$sql2))
 { 
-   echo "Bus Removed.";
+   echo "Driver Removed.";
 }
     else
   {
