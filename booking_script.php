@@ -6,10 +6,6 @@ if(!$db)
 {
     die("Connection error: " .mysqli_connect_error());
 }
-else
-{
-    echo "Connection Success" . "<br>";
-}
 
     $id = $_POST['ID'];
     $ts = $_POST['time_slot'];
@@ -21,7 +17,7 @@ $sql = "INSERT INTO bookings(User_ID, Route_ID, Way, Time_Slot, Date) VALUES ($i
 
 if(mysqli_query($db,$sql))
 { 
-   echo "Information added";
+   echo "Booking Confirmed";
 }
     else
   {
