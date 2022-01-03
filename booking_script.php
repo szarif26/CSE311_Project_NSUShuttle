@@ -11,7 +11,7 @@ if(!$db)
     $ts = $_POST['time_slot'];
     $way = $_POST['Way'];
     $date = $_POST['Date'];
-    $route = $_POST['Stoppages'];
+    $route = $_POST['route_id'];
     
 $sql = "INSERT INTO bookings(User_ID, Route_ID, Way, Time_Slot, Date) VALUES ($id, '$route', '$way', '$ts', '$date')";
 
