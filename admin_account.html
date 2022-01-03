@@ -68,12 +68,12 @@
     <!--Forms begin-->
     <div class="all_forms">
     <div class="form-1">
-            <form action="bus.php" method="POST">
         <br>
 
         <h2 id="Bus"><strong>Do you want to make any changes to <strong>Bus</strong> info?</strong></h2>
 
         <div>
+             <form action="bus_add.php" method="POST">
             <h3>Add new Bus Info:</h3>
             <label>Bus ID</label>
             <input type="number" name="Bus_ID" placeholder="Enter Bus ID">
@@ -82,13 +82,16 @@
             <input type="name" name="Name" placeholder="Enter the name">
 
             <label>Registration Number</label>
-            <input type="number" name="Registration_No" placeholder="Enter the Number">
+            <input type="text" name="Registration_No" placeholder="Enter the Number">
 
             <button type="submit" value="Submit">ADD</button>
             <button type="reset">Reset</button>
+            </form>
+
         </div>
 
         <div>
+             <form action="bus_update.php" method="POST">
             <h3>Update Bus Info:</h3>
             <label>Bus ID</label>
             <input type="number" name="Bus_ID" placeholder="Enter Bus ID">
@@ -101,9 +104,11 @@
 
             <button type="submit" value="Submit">Update</button>
             <button type="reset">Reset</button>
+            </form>
         </div>
 
         <div>
+             <form action="bus_remove.php" method="POST">
             <h3>Remove Bus Info:</h3>
             <label>Bus ID</label>
             <input type="number" name="Bus_ID" placeholder="Enter Bus ID">
@@ -116,18 +121,25 @@
 
             <button type="submit" value="Submit">Remove</button>
             <button type="reset">Reset</button>
-        </div>
             </form>
+        </div>
+
+        <br>
+
+        <form action="bus_view">
+            <button type="submit" value="Submit">View All</button>            
+        </form>
+        
             <div class="clearfix"></div>                        
-    </div>
+    </div><!-- Form-1 ends-->
 
         <br>
 
         <div class="form-2">
-            <form action="driver.php" method="POST">
-                <br>
+            <br>
             <h2 id="Driver">Do you want to make any changes to <strong>Driver</strong> info?</h2>
         <div>
+            <form action="driver_add.php" method="POST">
             <h3>Add new Driver:</h3>
             <label>Driver ID</label>
             <input type="number" name="driver_ID" placeholder="Enter the ID">
@@ -140,9 +152,11 @@
 
             <button type="submit" value="Submit">ADD</button>
             <button type="reset">Reset</button>
+            </form>
         </div>
 
         <div>
+            <form action="driver_update.php" method="POST">
             <h3>Update Driver Info:</h3>
             <label>Driver ID</label>
             <input type="number" name="driver_ID" placeholder="Enter the ID">
@@ -155,10 +169,12 @@
 
             <button type="submit" value="Submit">Update</button>
             <button type="reset">Reset</button>
+            </form>
         </div>
 
 
         <div>
+            <form action="driver_remove.php" method="POST">
             <h3>Remove Driver Info:</h3>
             <label>Driver ID</label>
             <input type="number" name="driver_ID" placeholder="Enter the ID">
@@ -170,22 +186,28 @@
             <input type="number" name="Phone" placeholder="Enter the number">
             <button type="submit" value="Submit">Remove</button>
             <button type="reset">Reset</button>
-
-        </div>
             </form>
+        </div>
+        <br>
+        <div>
+        <form action="driver_view">
+            <button type="submit" value="Submit">View All</button>            
+        </form>
+        </div>
+
             <div class="clearfix"></div>
                         
-    </div>
+    </div><!-- Form-2 ends-->
 
       <br>
 
     <div class="form-3">
-            <form action="routes.php" method="POST">
                 <br>
             <h2 id="Routes">Do you want to make any changes to <strong>Routes</strong> info?</h2>
 
         <div class="routes">
             <div>
+            <form action="routes_add.php" method="POST">
             <h3>Add new Route:</h3>
 
             <label>Route ID</label>
@@ -195,24 +217,35 @@
             <input type="name" name="Name" placeholder="Enter the name">
             <button type="submit" value="Submit">ADD</button>
             <button type="reset">Reset</button>
+            </form>
         </div>
 
+        
+
         <div>
+            <form action="routes_remove.php" method="POST">
             <h3>Delete Route:</h3>
             <label>Route ID</label>
             <input type="number" name="Route_ID" placeholder="Enter the ID">
             <button type="submit" value="Submit">Remove</button>
             <button type="reset">Reset</button>
-        </div>
-        </div>
             </form>
+        </div>
+        </div>
 
-        <form action="stoppages.php" method="POST">
-                <br>
+        <br>
+        <div>
+        <form action="routes_view">
+            <button type="submit" value="Submit">View All</button>            
+        </form>
+        </div>
+
+        <br>
             <h2>Do you want to make any changes to <strong>Stoppages</strong> info?</h2>
 
         <div class="Stoppages">
         <div>
+        <form action="stoppages_add.php" method="POST">
             <h3>Add new Stoppage:</h3>
 
             <label>Route ID</label>
@@ -222,21 +255,23 @@
             <input type="name" name="Name" placeholder="Enter the name">
             <button type="submit" value="Submit">ADD</button>
             <button type="reset">Reset</button>
+        </form>
         </div>
 
         <div>
+        <form action="stoppages_rem.php" method="POST">
             <h3>Delete Stoppage:</h3>
             <label>Stoppage Name</label>
             <input type="name" name="Name" placeholder="Enter the name">
             <button type="submit" value="Submit">Remove</button>
             <button type="reset">Reset</button>
+        </form>
         </div>
-    </div>
+        </div>
 
-            </form>
             <div class="clearfix"></div>
                         
-    </div>
+    </div><!-- Form-3 ends-->
 
     <br>
 
@@ -278,7 +313,7 @@
             </form>
             <div class="clearfix"></div>
                         
-    </div>
+    </div><!-- Form-1 ends-->
 
 
 
