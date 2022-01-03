@@ -23,7 +23,4 @@ if(mysqli_query($db,$sql))
   {
     echo "There is an error: " . mysqli_error($db);
   } 
-
-
-
 ?>

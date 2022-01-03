@@ -190,7 +190,7 @@
 
         <div class="routes">
             <div>
-            <form action="route_add.php" method="POST">
+            <form action="routes_add.php" method="POST">
             <h3>Add new Route:</h3>
 
             <label>Route ID</label>
@@ -302,6 +302,45 @@
             <button type="reset">Reset</button>
 
             </form>
+
+            <form action="assign_bus.php" method="POST">
+                <br>
+            
+            <h3>To assign bus:</h3>
+            <label>Date</label>
+            <input type="date" name="Date">
+
+            <label>Time Slot</label>
+			<select name="time_slot">
+			<option value="" disabled selected hidden>Select a Slot</option>
+			<option value="8:00AM">8:00AM</option>
+			<option value="9:40AM">9:40AM</option>
+			<option value="11:20AM">11:20AM</option>
+			<option value="12:50PM">12:50PM</option>
+			<option value="2:40PM">2:40PM</option>
+			<option value="4:10PM">4:10PM</option>
+			</select>
+
+            <label>Way</label>
+			<select name="Way">
+			<option value="" disabled selected hidden>Select an option</option>
+			<option value="Arrival">Arrival</option>
+			<option value="Departure">Departure</option>
+			</select>
+    
+
+            <label>Route ID</label>
+            <input type="name" name="Name" placeholder="Enter the Route ID">
+
+            <label>Bus ID</label>
+            <input type="name" name="Bus" placeholder="Enter the Bus ID">
+
+
+            <button type="submit" value="Submit">Assign</button>
+            <button type="reset">Reset</button>
+
+            </form>
+
 
             <br>
             <div>

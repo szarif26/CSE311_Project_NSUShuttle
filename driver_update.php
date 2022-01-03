@@ -7,14 +7,14 @@ if(!$db)
     die("Connection error: " .mysqli_connect_error());
 }
 
-    $bid = $_POST['Bus_ID'];
+    $bid = $_POST['bus_ID'];
     $did = $_POST['driver_ID'];
     
-$sql = "UPDATE bus SET Driver_ID = '$did' WHERE Bus_ID = '$bid'";
+$sql = "UPDATE driver SET Bus_ID = '$bid' WHERE Driver_ID = '$did'";
 
 if(mysqli_query($db,$sql))
 { 
-   echo "Driver Updated";
+   echo "Bus Updated";
 }
     else
   {
